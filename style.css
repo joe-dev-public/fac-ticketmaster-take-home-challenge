@@ -1,0 +1,7 @@
+/* :root {
+ --my-variable: hsl(0, 0%, 50%);
+} */
+
+* {
+    box-sizing: border-box;
+}
