@@ -22,7 +22,7 @@ The design of the form is attached and there are a number of features required, 
 ## The ask
 
 - [x] Break these requirements into separate user stories. Bear in mind the requirements may not be a complete list,
-- [x] feel free to add more stories as you see fit. ([#1](https://github.com/joe-dev-public/fac-ticketmaster-take-home-challenge/issues/1), [#7](https://github.com/joe-dev-public/fac-ticketmaster-take-home-challenge/issues/7))
+- [x] feel free to add more stories as you see fit. ([#1](https://github.com/joe-dev-public/fac-ticketmaster-take-home-challenge/issues/1), [#7](https://github.com/joe-dev-public/fac-ticketmaster-take-home-challenge/issues/7), [#10](https://github.com/joe-dev-public/fac-ticketmaster-take-home-challenge/issues/10))
 - Focus on the front end side of things - assume that the APIs already exist and work correctly for waiting list checks/submission/user sign in
 - [x] On a new GitHub repo,
 - [x] create an issue for every user story
