@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Kinda similar to Averta: -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet"> 
 
     <link href="style.css" rel="stylesheet">
 </head>
@@ -20,10 +20,34 @@
             <h1>Join Waiting List</h1>
         </header>
         <main>
+<!--
             <div class="exclamation-yellow">!</div>
             <p><b>You're already signed up!</b></p>
             <p>We'll contact you if more tickets become available</p>
             <a href="" class="button-link-blue">View other dates</a>
+-->
+            <img src="already-on-list.png" class="already-added-icon">
+            <p><b>How should we contact you?</b></p>
+            <form>
+                <div class="form-border">
+                    <fieldset>
+                        <input type="checkbox" name="mobile-selected">
+                        <label>
+                            Mobile Number
+                            <span class="helptext">Please include country code</span>
+                            <input type="tel" name="mobile">
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="checkbox" name="email-selected" checked="on">
+                        <label>
+                            Email
+                            <b>name@example.org</b>
+                        </label>
+                    </fieldset>
+                </div>
+                <input type="submit" class="button-link-blue" value="Confirm">
+            </form>
         </main>
     </div>
 </body>
