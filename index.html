@@ -16,27 +16,30 @@
 <body>
 
     <div id="challenge-controls">
-        <p>Run challenge with user who is:</p>
-        <input type="button" value="already ">
-        <input type="button" value="*not* already">
-        <p>added to waiting list</p>
+        <p>Run challenge as a user who is:</p>
+        <input type="button" value="already " id="btn-added">
+        <input type="button" value="*not* already" id="btn-not">
+        <p>on the waiting list.</p>
+        <p class="helptext">(Reload the page to get back to this starting point.)</p>
     </div>
 
-    <div id="everything">
+    <div id="loading-message" class="hidden"><p><b>Logging in...</b></p></div>
+
+    <div id="everything" class="hidden">
         <header>
             <a href="" class="back-button">&lt;</a>
             <h1>Join Waiting List</h1>
         </header>
         <main>
 
-            <div id="already-added">
+            <div id="already-added" class="hidden">
                 <div class="exclamation-yellow">!</div>
                 <p><b>You're already signed up!</b></p>
                 <p>We'll contact you if more tickets become available</p>
                 <a href="" class="button-link-blue">View other dates</a>
             </div>
 
-            <div id="main-form">
+            <div id="main-form" class="hidden">
                 <img src="already-on-list.png" class="already-added-icon">
                 <p><b>How should we contact you?</b></p>
                 <form>
