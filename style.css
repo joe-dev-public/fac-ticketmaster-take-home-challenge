@@ -19,7 +19,7 @@ body {
 #everything {
     /* background-color: #fff; */
     border: 2px solid #eee;
-    box-shadow: 0 0.25rem 1rem #ddd;
+    /* box-shadow: 0 0.25rem 1rem #ddd; */
     margin: 0 auto;
     max-width: 40rem;
 }
@@ -28,13 +28,13 @@ header {
     border-bottom: 1px solid #bfbfbf;
     display: grid;
     grid-template-columns: 2rem auto 2rem;
-    /* padding: 0.75rem 0; */
+    padding: 0.25rem 0;
 }
 
 .back-button {
-    color: #000;
-    font-size: 2rem;
-    font-weight: 100;
+    color: #333;
+    font-size: 1.75rem;
+    font-weight: 200;
     text-align: center;
 }
 
@@ -70,9 +70,60 @@ p {
 .button-link-blue {
     background-color: #026cdf;
     border-radius: 2px;
+    border: 0;
     color: #fff;
+    cursor: pointer;
     display: block;
     /* font-weight: 600; */
+    margin: 0 auto;
     padding: 0.75rem;
     text-align: center;
+    width: 100%;
+}
+
+.already-added-icon {
+    display: block;
+    margin: 0 auto;
+}
+
+.form-border {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem #ccc;
+    margin-bottom: 1rem;
+}
+
+fieldset {
+    border: 0;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0 1rem;
+    padding: 1.25rem 0;
+}
+
+fieldset:first-child {
+    border-bottom: 1px solid #bfbfbf;
+}
+
+input[type=checkbox] {
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
+/* label {
+    display: block;
+} */
+
+.helptext {
+    color: #777;
+    display: block;
+    font-size: 0.85rem;
+}
+
+input[type=tel] {
+    font-size: 1.25rem;
+    margin-top: 0.75rem;
+}
+
+label > b {
+    display: block;
 }
