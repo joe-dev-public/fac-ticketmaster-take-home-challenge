@@ -16,6 +16,14 @@ body {
     margin: 1rem 0;
 }
 
+#challenge-controls {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
 #everything {
     /* background-color: #fff; */
     border: 2px solid #eee;
@@ -108,10 +116,6 @@ input[type=checkbox] {
     height: 1.75rem;
     width: 1.75rem;
 }
-
-/* label {
-    display: block;
-} */
 
 .helptext {
     color: #777;

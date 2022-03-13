@@ -14,41 +14,25 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="everything">
+
+    <div id="challenge-controls">
+        <p>Run challenge as a user who is:</p>
+        <input type="button" value="already " id="btn-added">
+        <input type="button" value="*not* already" id="btn-not">
+        <p>on the waiting list.</p>
+        <p class="helptext">(Reload the page to get back to this starting point.)</p>
+    </div>
+
+    <div id="loading-message" class="hidden"><p><b>Logging in...</b></p></div>
+
+    <div id="everything" class="hidden">
         <header>
             <a href="" class="back-button">&lt;</a>
             <h1>Join Waiting List</h1>
         </header>
         <main>
-<!--
-            <div class="exclamation-yellow">!</div>
-            <p><b>You're already signed up!</b></p>
-            <p>We'll contact you if more tickets become available</p>
-            <a href="" class="button-link-blue">View other dates</a>
--->
-            <img src="already-on-list.png" class="already-added-icon">
-            <p><b>How should we contact you?</b></p>
-            <form>
-                <div class="form-border">
-                    <fieldset>
-                        <input type="checkbox" name="mobile-selected">
-                        <label>
-                            Mobile Number
-                            <span class="helptext">Please include country code</span>
-                            <input type="tel" name="mobile">
-                        </label>
-                    </fieldset>
-                    <fieldset>
-                        <input type="checkbox" name="email-selected" checked="on">
-                        <label>
-                            Email
-                            <b>name@example.org</b>
-                        </label>
-                    </fieldset>
-                </div>
-                <input type="submit" class="button-link-blue" value="Confirm">
-            </form>
         </main>
     </div>
+
 </body>
 </html>
