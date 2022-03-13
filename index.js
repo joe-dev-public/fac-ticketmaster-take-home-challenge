@@ -4,28 +4,20 @@
 
     - Use a promise to simulate the waiting list API.
     - This user story begins when a user has just successfully logged in.
+    - Clicking one of two buttons to run the challenge is akin to clicking "login".
     - Possible flow:
         - Get the email of the logged-in user by clicking one of two buttons to run challenge.
         - Pass the logged-in username/email to the API.
-        - Wait for the response, saying whether or not they're already on the waiting list.
+        - Wait for the response saying whether or not they're already on the waiting list.
         - Depending on the response, show the message or show the form.
-        - (You can show the pre-filled email, even though that belongs to another user story.)
 
 */
 
-// Simulated waiting list data for this event:
-const waitingList = [
-    // joe@example.com *is* on the waiting list already:
-    {
-        email: 'joe@example.com',
-        onWaitingList: true
-    },
-    // name@example.org is *not* on the waiting list already:
-    {
-        email: 'name@example.org',
-        onWaitingList: false 
-    }
-];
+
+// Example waiting list data for this event.
+// User 'joe@example.com' is on the waiting list already:
+const waitingList = ['joe@example.com'];
+
 
 function getResponseFromWaitingList(email) {
 
@@ -33,12 +25,13 @@ function getResponseFromWaitingList(email) {
 
     // Find the user with the provided email address (a unique identifier):
     for (const user of waitingList) {
-        if (user.email === email) {
-            isUserOnWaitingListAlready = user.onWaitingList;
+        if (user === email) {
+            isUserOnWaitingListAlready = true;
         }
     }
 
-    // Return a promise with a small delay to simulate API (network/DB/etc.) delay:    
+    // Return a promise which resolves after a small delay to simulate API
+    // (network/DB/etc.) delay:
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(isUserOnWaitingListAlready);
@@ -47,10 +40,14 @@ function getResponseFromWaitingList(email) {
 
 }
 
+
 function runChallenge(email) {
+    // Immediately hide challenge controls and show "loading" message:
     challengeControls.classList.add('hidden');
     loadingMsg.innerHTML += `<p style="font-size: 1.25rem;">${email}</p>`;
     loadingMsg.classList.remove('hidden');
+
+    // When the response is fulfilled, show either the message or the form:
     getResponseFromWaitingList(email)
         .then((resolve) => {
             everything.classList.remove('hidden');
@@ -63,11 +60,14 @@ function runChallenge(email) {
         });
 }
 
+
+// Just in case someone clicks the submit button :)
 document.querySelector('form').addEventListener('submit', (event) => {
     event.preventDefault();
 });
 
-// Run the challenge:
+
+// Prepare and run the challenge:
 
 const challengeControls = document.querySelector('#challenge-controls');
 const loadingMsg = document.querySelector('#loading-message');
