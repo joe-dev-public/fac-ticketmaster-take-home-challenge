@@ -18,8 +18,44 @@
 // User 'joe@example.com' is on the waiting list already:
 const waitingList = ['joe@example.com'];
 
+// Markup to add depending on response:
+const alreadyAddedHTML = `
+<div id="already-added">
+    <div class="exclamation-yellow">!</div>
+    <p><b>You're already signed up!</b></p>
+    <p>We'll contact you if more tickets become available</p>
+    <a href="" class="button-link-blue">View other dates</a>
+</div>
+`;
 
-function getResponseFromWaitingList(email) {
+const mainFormHTML = `
+<div id="main-form">
+    <img src="already-on-list.png" class="already-added-icon">
+    <p><b>How should we contact you?</b></p>
+    <form>
+        <div class="form-border">
+            <fieldset>
+                <input type="checkbox" name="mobile-selected">
+                <label>
+                    Mobile Number
+                    <span class="helptext">Please include country code</span>
+                    <input type="tel" name="mobile">
+                </label>
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" name="email-selected" checked="on">
+                <label>
+                    Email
+                    <b>name@example.org</b>
+                </label>
+            </fieldset>
+        </div>
+        <input type="submit" class="button-link-blue" value="Confirm">
+    </form>
+</div>
+`;
+
+function getResponseFromWaitingListAPI(email) {
 
     let isUserOnWaitingListAlready;
 
@@ -48,23 +84,21 @@ function runChallenge(email) {
     loadingMsg.classList.remove('hidden');
 
     // When the response is fulfilled, show either the message or the form:
-    getResponseFromWaitingList(email)
+    getResponseFromWaitingListAPI(email)
         .then((resolve) => {
             everything.classList.remove('hidden');
             loadingMsg.classList.add('hidden');
             if (resolve === true) {
-                alreadyAdded.classList.remove('hidden');
+                mainEl.innerHTML = alreadyAddedHTML;
             } else {
-                mainForm.classList.remove('hidden');
+                mainEl.innerHTML = mainFormHTML;
+                // Just in case someone clicks the submit button :)
+                document.querySelector('form').addEventListener('submit', (event) => {
+                    event.preventDefault();
+                });
             }
         });
 }
-
-
-// Just in case someone clicks the submit button :)
-document.querySelector('form').addEventListener('submit', (event) => {
-    event.preventDefault();
-});
 
 
 // Prepare and run the challenge:
@@ -72,8 +106,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
 const challengeControls = document.querySelector('#challenge-controls');
 const loadingMsg = document.querySelector('#loading-message');
 const everything = document.querySelector('#everything');
-const alreadyAdded = document.querySelector('#already-added');
-const mainForm = document.querySelector('#main-form');
+const mainEl = document.querySelector('main');
 const runBtnAlreadyAdded = document.querySelector('#btn-added');
 const runBtnNotAdded = document.querySelector('#btn-not');
 
