@@ -26,8 +26,8 @@ The design of the form is attached and there are a number of features required, 
 - Focus on the front end side of things - assume that the APIs already exist and work correctly for waiting list checks/submission/user sign in
 - [x] On a new GitHub repo,
 - [x] create an issue for every user story
-- [ ] Decide which user story you are going to focus on for the take-home challenge
-- [ ] Attempt to complete the selected user story. Do not attempt to complete the whole feature!
-- [ ] If you fancy it, we welcome any critique or alternative suggestions for the design if you feel like it could be improved
+- [x] Decide which user story you are going to focus on for the take-home challenge
+- [x] Attempt to complete the selected user story. Do not attempt to complete the whole feature!
+- If you fancy it, we welcome any critique or alternative suggestions for the design if you feel like it could be improved
 
 [^1]: Not the same as #6, which occurs when the form is submitted, rather than when it loads.
